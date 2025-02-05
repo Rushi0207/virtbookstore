@@ -30,4 +30,37 @@ public class BookService {
             throw new RuntimeException(e);
         }
     }
+
+    public Book findbyId(long id) {
+        return bookRepository.findById(id);
+    }
+
+    public boolean update(Book book) {
+        try{
+            bookRepository.save(book);
+            return true;
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public List<Book> findByGenre(String genre) {
+        try{
+            return  bookRepository.findByGenre(genre);
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Book findBookByTitle(String title) {
+        try{
+            return bookRepository.findByTitle(title);
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
 }

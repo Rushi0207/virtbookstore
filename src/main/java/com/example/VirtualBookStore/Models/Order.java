@@ -18,6 +18,7 @@ public class Order {
 
     private List<OrderItem> orderItems;
     private Double item;
+    private Double totalAmount;
     private String status;
     private String createdAt;
 
